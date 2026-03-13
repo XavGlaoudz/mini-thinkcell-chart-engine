@@ -1,0 +1,11 @@
+/build/
+/Debug/
+/x64/
+
+*.exe
+*.obj
+*.pdb
+*.ilk
+
+.vs/
+.vscode/
