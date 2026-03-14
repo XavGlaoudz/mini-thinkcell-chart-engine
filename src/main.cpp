@@ -1,5 +1,7 @@
 #include <iostream>
+
 #include "chart_model.h"
+#include "layout_engine.h"
 
 int main() {
     ChartModel chart;
@@ -8,10 +10,20 @@ int main() {
     chart.addDataPoint("B", 25.0);
     chart.addDataPoint("C", 15.0);
 
-    std::cout << "Chart data:" << std::endl;
+    LayoutEngine layoutEngine;
+    const auto bars = layoutEngine.computeBarChartLayout(chart, 300.0, 200.0);
 
-    for (const auto& point : chart.getData()) {
-        std::cout << point.label << " : " << point.value << std::endl;
+    std::cout << "Bar chart layout:" << std::endl;
+
+    for (const auto& bar : bars) {
+        std::cout
+            << bar.label
+            << " | value=" << bar.value
+            << " | x=" << bar.x
+            << " | y=" << bar.y
+            << " | width=" << bar.width
+            << " | height=" << bar.height
+            << std::endl;
     }
 
     return 0;

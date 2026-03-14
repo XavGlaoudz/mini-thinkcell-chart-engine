@@ -8,6 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_executable(mini_thinkcell_chart_engine
     src/main.cpp
     src/chart_model.cpp
+    src/layout_engine.cpp
 )
 
 target_include_directories(mini_thinkcell_chart_engine PRIVATE include)
